@@ -7,15 +7,17 @@ def generate_color_map():
         for j, minor in enumerate(minor_colors):
             output.append(f'{i * 5 + j:2} | {major:<6} | {minor:<6}')
     return output
-def print_color_map():
+
+def print_color_map(output_func=print):
     color_map = generate_color_map()
     for line in color_map:
-        print(line)
+        output_func(line)
     return len(color_map)
-    
+
 if __name__ == "__main__":
     result = print_color_map()
     assert(result == 25)
     print("All is well (maybe!)")
+
 
 
